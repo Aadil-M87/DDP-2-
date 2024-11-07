@@ -1,0 +1,20 @@
+---
+title: "Developing Data Products Week 2 Assignment"
+author: "Aadil Panjvani"
+date: "November 7th 2024"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Code:
+```{r}
+library(leaflet)
+monuments<-data.frame(lat=c(27.1751,31.6200,9.9195,18.9220,28.6562),lng=c(78.0421,74.8765,78.1193,72.8347,77.2410),name=c("Taj Mahal","Golden Temple","Meenakshi Temple","Gateway Of India","Red Fort"))
+my_map<-monuments %>% leaflet() %>% addTiles() %>% addMarkers(popup =monuments$name,clusterOptions = markerClusterOptions())
+my_map
+```
+
+
